@@ -1,9 +1,8 @@
 <div>
-  <p>-When Start Game, an event (hold incrementing numbers) should be emitted each secound (ref=setinterval()).</p>
-  <p>-Event listenable from outside component. Wehn game stopped no more events emitted (clearInterval(ref)).</p>
-  <p>-Wait until above done</p>
-  <app-control></app-control>
-  <app-game-evan></app-game-evan>
-  <app-game-odd></app-game-odd>
+  <app-gamecontrol (intervalFired)="onIntervalFired($event)"></app-gamecontrol>
 </div>
-<!-- Left off on trying to do first p instructions  -->
+<div>
+  <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd><hr/>
+  <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+
+</div>
